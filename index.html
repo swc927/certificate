@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Certificate Generator | A4 Landscape</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700&family=Great+Vibes&family=Cinzel&family=Dancing+Script&family=Cormorant+Garamond&family=Satisfy&family=Tangerine&family=Noto+Serif+Display&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>⚡ Certificate Generator</h1>
+    <p class="subheading">Upload. Paste. Generate. Download.</p>
+
+    <div class="upload-section">
+      <label>🎨 Upload Certificate Background:</label>
+      <input type="file" id="bgUpload" accept="image/*">
+    </div>
+
+    <div class="input-section">
+      <label>📐 Choose Layout:</label>
+      <label><input type="radio" name="layout" value="landscape" checked> Landscape</label>
+      <label><input type="radio" name="layout" value="portrait"> Portrait</label>
+    </div>
+
+
+    <div class="input-section">
+      <label>🖋 Choose Font Style:</label>
+      <select id="fontSelect">
+        <option value="'Playfair Display', serif">Playfair Display</option>
+        <option value="'Great Vibes', cursive">Great Vibes</option>
+        <option value="'Cinzel', serif">Cinzel</option>
+        <option value="'Dancing Script', cursive">Dancing Script</option>
+        <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
+        <option value="'Satisfy', cursive">Satisfy</option>
+        <option value="'Tangerine', cursive">Tangerine</option>
+        <option value="'Noto Serif Display', serif">Noto Serif Display</option>
+      </select>
+    </div>
+
+    <div class="input-section">
+      <label for="fontSizeRange">🔠 Font Size: <span id="fontSizeDisplay">100</span> px</label>
+      <input type="range" id="fontSizeRange" min="40" max="200" value="100">
+
+      <label for="yOffsetRange">↕️ Vertical Position: <span id="yOffsetDisplay">40</span> px</label>
+      <input type="range" id="yOffsetRange" min="-500" max="500" value="40">
+    </div>
+
+    <div class="input-section">
+      <label>🧾 Paste Names (One per line):</label>
+      <textarea id="names" placeholder="e.g. John Tan&#10;Alicia Lim&#10;Daniel Chen"></textarea>
+    </div>
+
+    <div class="buttons">
+      <button id="generate">⚙️ Generate Certificates</button>
+      <button id="download">⬇️ Download PDF</button>
+    </div>
+
+    <div id="output"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
