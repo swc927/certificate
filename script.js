@@ -53,6 +53,12 @@ document.getElementById("generate").addEventListener("click", () => {
       ctx.fillText(name.trim(), canvas.width / 2, canvas.height / 2 + yOffset);
 
       outputDiv.appendChild(canvas);
+
+          const totalPages = document.querySelectorAll(".output-page").length;
+    document.getElementById(
+      "pageCountDisplay"
+    ).textContent = `Total Pages: ${totalPages}`;
+  });
     });
   });
 });
