@@ -19,6 +19,9 @@ document.getElementById("generate").addEventListener("click", () => {
     .filter((n) => n);
   outputDiv.innerHTML = "";
 
+  document.getElementById("pageCountDisplay").textContent = "";
+
+
   if (!backgroundImg) {
     alert("⚠️ Please upload a certificate background first.");
     return;
@@ -43,6 +46,9 @@ document.getElementById("generate").addEventListener("click", () => {
         canvas.height = 2480;
       }
 
+      document.getElementById("pageCountDisplay").textContent = `Total Pages: ${names.length}`;
+
+
       const ctx = canvas.getContext("2d");
 
       ctx.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height);
@@ -54,11 +60,6 @@ document.getElementById("generate").addEventListener("click", () => {
 
       outputDiv.appendChild(canvas);
 
-          const totalPages = document.querySelectorAll(".output-page").length;
-    document.getElementById(
-      "pageCountDisplay"
-    ).textContent = `Total Pages: ${totalPages}`;
-  });
     });
   });
 });
