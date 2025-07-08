@@ -32,7 +32,7 @@ document.getElementById("generate").addEventListener("click", () => {
     const fontSize = parseInt(document.getElementById("fontSizeRange").value);
     const yOffset = parseInt(document.getElementById("yOffsetRange").value);
 
-    names.forEach((name) => {
+  names.forEach((name, index) => {
       const canvas = document.createElement("canvas");
 
       const layout = document.querySelector(
@@ -45,8 +45,6 @@ document.getElementById("generate").addEventListener("click", () => {
         canvas.width = 3508;
         canvas.height = 2480;
       }
-
-
 
       const ctx = canvas.getContext("2d");
 
