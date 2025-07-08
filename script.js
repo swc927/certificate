@@ -46,7 +46,6 @@ document.getElementById("generate").addEventListener("click", () => {
         canvas.height = 2480;
       }
 
-      document.getElementById("pageCountDisplay").textContent = `Total Pages: ${names.length}`;
 
 
       const ctx = canvas.getContext("2d");
@@ -61,8 +60,13 @@ document.getElementById("generate").addEventListener("click", () => {
       outputDiv.appendChild(canvas);
 
     });
+
+      document.getElementById("pageCountDisplay").textContent = `Total Pages: ${names.length}`;
+
   });
 });
+
+
 
 document.getElementById("download").addEventListener("click", async () => {
   const { jsPDF } = window.jspdf;
